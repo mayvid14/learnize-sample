@@ -1,0 +1,27 @@
+{
+  "name": "learnize-sample",
+  "version": "1.0.0",
+  "description": "A sample web site for learnize pvt ltd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayvid14/learnize-sample.git"
+  },
+  "author": "Divyam Nandanwar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayvid14/learnize-sample/issues"
+  },
+  "homepage": "https://github.com/mayvid14/learnize-sample#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "materialize-css": "^0.98.2",
+    "mongoose": "^4.10.6"
+  }
+}
