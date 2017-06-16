@@ -1,3 +1,3 @@
 module.exports = {
-    dburl: 'mongodb://127.0.0.1:27017/learnize'
+    dburl: 'mongodb://mayvid14:learnizesample@54.209.239.143:27017/learnize'
 };
