@@ -1,0 +1,17 @@
+<script>
+    $('.materialboxed').materialbox();
+</script>
+<h4>Clientele</h4>
+<button class="btn waves-effect waves-light" ng-click="choices=''">Default</button>
+<button class="btn waves-effect waves-light" ng-click="choices='title'">Title</button>
+<button class="btn waves-effect waves-light" ng-click="choices='addedOn'">Date</button>
+<button class="btn waves-effect waves-light" ng-click="choices='title'">Ascending</button>
+<button class="btn waves-effect waves-light" ng-click="choices='-title'">Descending</button>
+<div class="row">
+    <div class="col sm12 m12 l4 xl4" ng-repeat="client in clientele | orderBy : choices"> <img src="{{client.pic}}" class="responsive-img materialboxed logo" alt=""> </div>
+</div>
+<style>
+    .logo {
+        max-height: 200px;
+    }
+</style>

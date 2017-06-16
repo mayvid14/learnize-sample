@@ -1,7 +1,8 @@
 <h4>{{heading}}</h4>
+<button class="btn waves-effect right" ng-show="jobs.length===1" ng-click="reset()">View All</button>
 <div class="row">
     <div class="col s12 m8 offset-m2 l8 offset-l2 xl8 offset-xl2">
-        <table ng-repeat="job in jobs">
+        <table ng-repeat="job in jobs" class="hoverable">
             <tr>
                 <td>
                     <p><strong>Title</strong></p>
@@ -13,7 +14,7 @@
                     <p><strong>Salary</strong></p>
                 </td>
                 <td>
-                    <p>{{job.salary}}</p>
+                    <p>₹ {{job.salary}} p.a</p>
                 </td>
             </tr>
             <tr>
@@ -31,6 +32,10 @@
                 <td>
                     <p>{{job.information}}</p>
                 </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a ng-click="applynow(job.title)">Apply Now</a></td>
             </tr>
         </table>
     </div>

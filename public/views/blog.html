@@ -1,0 +1,11 @@
+<h4>Blogs</h4>
+<div class="row">
+    <div class="card" ng-repeat="blog in blogs | orderBy : '-createdOn'">
+        <div class="card-image"> <img src="{{blog.pic}}" alt=""> <span class="card-title">{{blog.title}}</span> </div>
+        <div class="card-content"> <span class="grey-text text-darken-2 right">- {{blog.createdOn | getDur}}</span>
+           <p>- {{blog.user}}</p><br>
+            <p>{{blog.description}}</p>
+            
+        </div>
+    </div>
+</div>

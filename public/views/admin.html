@@ -1,0 +1,103 @@
+<h4>Admin Portal</h4>
+<div ng-show="!logged">
+    <form name="logform" novalidate>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="uid" type="text" class="validate" ng-model="uname" required>
+                <label for="uid">Username</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="pwd" type="password" class="validate" ng-minlength="6" ng-model="passwd" required>
+                <label for="pwd">Password</label>
+            </div>
+        </div>
+        <input type="submit" class="btn waves-effect waves-light" ng-disabled="logform.$invalid" value="Submit" ng-click="login()"> </form>
+</div>
+<div ng-show="logged">
+    <button class="btn waves-effect waves-light right" ng-click="logout()">Log out</button>
+    <br>
+    <br>
+    <ul class="collapsible popout" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header">Write a blog</div>
+            <div class="collapsible-body">
+                <form name="blogform" novalidate>
+                    <div class="row">
+                        <div class="input-field">
+                            <input id="btitle" type="text" class="validate" ng-model="btitle" required>
+                            <label for="btitle">Title for blog</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <textarea name="bdesc" id="bdesc" required ng-model="bdesc" class="materialize-textarea"></textarea>
+                            <label for="bdesc">Write here...</label>
+                        </div>
+                    </div>
+                    <div class="file-field input-field">
+                        <div class="btn"> <span>File</span>
+                            <input type="file" ngf-select ng-model="blogpic" name="file" accept="image/*" ngf-max-size="10MB" required> </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text"> </div>
+                    </div> <img ng-show="blogform.file.$valid" ngf-thumbnail="blogpic" class="thumb responsive-img col s12 m6 l6 xl6">
+                    <input type="submit" class="btn waves-effect waves-light" ng-disabled="blogform.$invalid" value="Submit" ng-click="blogupload()"> </form>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header">Add a clientele</div>
+            <div class="collapsible-body">
+                <form name="cform" novalidate>
+                    <div class="row">
+                        <div class="input-field">
+                            <input id="ctitle" type="text" class="validate" ng-model="ctitle" required>
+                            <label for="ctitle">Title of clientele</label>
+                        </div>
+                    </div>
+                    <div class="file-field input-field">
+                        <div class="btn"> <span>Client Logo</span>
+                            <input type="file" ngf-select ng-model="cpic" name="file" accept="image/*" ngf-max-size="10MB" required> </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text"> </div>
+                    </div> <img ng-show="cform.file.$valid" ngf-thumbnail="cpic" class="thumb responsive-img col s12 m6 l6 xl6">
+                    <input type="submit" class="btn waves-effect waves-light" ng-disabled="cform.$invalid" value="Submit" ng-click="cupload()"> </form>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header">Add a job</div>
+            <div class="collapsible-body">
+                <form action="" name="jform">
+                    <div class="row">
+                        <div class="input-field">
+                            <input id="jtitle" type="text" class="validate" ng-model="jtitle" required>
+                            <label for="jtitle">Job Title</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <input id="salary" type="number" class="validate" ng-model="salary" ng-minlength="1" required>
+                            <label for="salary">Salary</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <input id="loc" type="text" class="validate" ng-model="loc" required>
+                            <label for="loc">Location</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <textarea name="jdesc" id="jdesc" required ng-model="jdesc" class="materialize-textarea"></textarea>
+                            <label for="jdesc">Job Description</label>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn waves-effect waves-light" ng-disabled="jform.$invalid" value="Submit" ng-click="jupload()">
+                </form>
+            </div>
+        </li>
+    </ul>
+</div>
+<script>
+    $('.collapsible').collapsible();
+</script>
